@@ -1,26 +1,41 @@
+ */
 import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class minmax {
+ public static long getMax(int[] inputArray){ 
 
+   
+  Arrays.sort(inputArray);
+  
+    long sum=0;
+     for(int i=1;i<inputArray.length;i++){
+              sum=sum+inputArray[i];
+          }return sum; }
+ 
+ public static long getMin(int[] inputArray){ 
+
+   
+  Arrays.sort(inputArray);
+  
+    long sum=0;
+     for(int i=0;i<(inputArray.length-1);i++){
+              sum=sum+inputArray[i];
+          }return sum; }
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        
+   
         Scanner in = new Scanner(System.in);
-        long[] a = new long[5];
-        long sum = 0;
-        
-        for (int i = 0 ; i < a.length ; i++){
-            long temp = in.nextLong();
-            a[i] = temp;
-            sum += temp;
+        int[] arr = new int[5];
+        for(int arr_i=0; arr_i < 5; arr_i++){
+            arr[arr_i] = in.nextInt();
+            
+         
         }
-    
-        Arrays.sort(a);
-        System.out.println((sum - a[a.length-1]) + " " + (sum - a[0]));
-        
+         long max =getMax(arr);
+         long min = getMin(arr);
+          System.out.println(min+" "+max);
     }
 }
